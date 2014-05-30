@@ -19,6 +19,7 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
+		//cambio
 		$data['principal'] = 'home/entradas.php';
 		$data['login'] = 'home/logueate.php';
 		//$data['registro'] ='home/registrate.php'
