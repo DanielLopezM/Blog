@@ -25,6 +25,14 @@ class Home extends CI_Controller {
 		//$data['registro'] ='home/registrate.php'
  		 $this->load->view('template', $data);
 	}
+
+	public function bienvenido_usuario()
+	{
+		$data['principal'] = 'home/entradas';
+		$data['login'] = "home/bienvenido.php";
+
+		$this->load->view('template', $data);
+	}
 }
 
 /* End of file welcome.php */

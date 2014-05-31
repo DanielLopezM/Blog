@@ -72,7 +72,7 @@
 
                          <p>¿No estás registrado o quieres crear otra cuenta?
               <br>Puedes registrarte ahora</p>
-            <button type="button" id="bregistro" class="btn btn-lg btn-success">Registro Nuevo</button>
+            <button type="button" id="bregistro" class="btn btn-lg btn-success">Registro Nuevo  <span class="glyphicon glyphicon-star-empty"></span></button>
                 <p></p>
                 <div id="registrooculto">
                 <form class="form-horizontal" role="form">
@@ -91,7 +91,7 @@
                   <div class="form-group">
                    <div class="col-sm-12">
                     <br>
-                    <button type="submit" class="btn btn-success btn-block"><b>Confirmar</b></button>
+                    <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span><b>  Confirmar</b></button>
                    </div>
                   </div>
                 </div>
