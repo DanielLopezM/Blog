@@ -2,24 +2,32 @@
              
 
 
-
+          <?php echo validation_errors(); ?>
               <p>¿No estás registrado o quieres crear otra cuenta?
               <br>Puedes registrarte ahora</p>
-            <button type="button" id="bregistro" class="btn btn-lg btn-success">Registro Nuevo  <span class="glyphicon glyphicon-star-empty"></span></button>
+            <button type="button" id="bregistro" class="btn btn-lg btn-success" >Registro Nuevo  <span class="glyphicon glyphicon-star-empty"></span></button>
                 <p></p>
                 <div id="registrooculto">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" action="usuario_registro" method="post">
                 <div class="form-group">
                   
                   <div class="col-sm-12">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input type="text" class="form-control" name="inputUsername" id="inputUsername" placeholder="Login">
                   </div>
                 </div>
                 <div class="form-group">
                   
                   <div class="col-sm-12">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <input type="password" class="form-control" name="inputPassword" id="inputPassword" placeholder="Password">
                   </div>
+                </div>
+
+                <div class="form-group">
+                  
+                  <div class="col-sm-12">
+                    <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Nombre real">
+                  </div>
+                </div>
 
                   <div class="form-group">
                    <div class="col-sm-12">
