@@ -1,6 +1,13 @@
 <?php
 	Class User_model extends CI_Model
 	{
+
+     function __construct()
+     {
+        parent::__construct();
+     
+     }
+     
 	 public function login($username, $password)
 	 {
 	   $this -> db -> select('login, password, name');
@@ -33,7 +40,18 @@
 	return true;
 	}
 
+	public function getUser($id)
+	{
+	   $this -> db -> select('name');
+	   $this -> db -> from('usuarios');
+	   $this -> db -> where('id', $id);
+	   $this -> db -> limit(1);
+	 
+	   $query = $this -> db -> get();
 
+	   return $query;
+
+	}
 
 
 	}

@@ -8,30 +8,39 @@ class Home extends CI_Controller {
 	   parent::__construct();
 	   $this->load->model('user_model','',TRUE);
 	   	$this->load->library('form_validation');
+
+	   	$this->load->model('entrada_model');
 	 }
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+
 	public function index()
 	{
-		//cambio
+		$postId = NULL;
+		 $data['entrada'] = $this->entrada_model->getEntrada($postId);
+
+	if($this->session->userdata('logged_in'))
+	   {
+	     $session_data = $this->session->userdata('logged_in');
+	     $data['username'] = $session_data['id'];
+	     $data['realname'] = $session_data['name'];
+
+	    $data['principal'] = 'home/entradas';
+		$data['login'] = "home/bienvenido.php";
+		$data['registro'] = 'home/yaregistrado.php';
+		$data['comentarios'] = 'home/comentarios.php';
+	     $this->load->view('template', $data);
+	   }
+	   else
+	   {
+	    	
+
 		$data['principal'] = 'home/entradas.php';
 		$data['login'] = 'home/logueate.php';
 		$data['registro'] = 'home/registrate.php';
+		$data['comentarios'] = 'home/no_comentarios.php';
 		//$data['registro'] ='home/registrate.php'
  		 $this->load->view('template', $data);
+	   }
+	
 	}
 	 function comprobar_login()
 	 {
@@ -53,7 +62,7 @@ class Home extends CI_Controller {
 	   else
 	   {
 	     //Go to private area
-	     redirect('bienvenido', 'refresh');
+	     redirect('home', 'refresh');
 	   }
 	 
 	 }
@@ -117,7 +126,7 @@ function check_database($password)
 	       );
 
 	    $this->session->set_userdata('logged_in', $sess_array);
-		redirect('bienvenido', 'refresh');
+		redirect('home', 'refresh');
 	}
 }
 
@@ -144,6 +153,14 @@ function check_Username($username)
 	   }
 
 	}
+
+
+	function logout()
+	 {
+	   $this->session->unset_userdata('logged_in');
+	   //session_destroy();
+	   redirect('home', 'refresh');
+	 }
 
 }
 

@@ -35,7 +35,7 @@ class Usuario_registro extends CI_Controller {
 	       );
 
 	    $this->session->set_userdata('logged_in', $sess_array);
-		redirect('bienvenido', 'refresh');
+		redirect('home', 'refresh');
 	}
 }
 
