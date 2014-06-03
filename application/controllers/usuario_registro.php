@@ -50,7 +50,7 @@ class Usuario_registro extends CI_Controller {
 	 
 	   if($query -> num_rows() == 1)
 	   {
-	   		$this->form_validation->set_message('check_Username', 'Nombre duplicado');
+	   		$this->form_validation->set_message('check_Username', 'La cuenta solicitada ya existe.');
 
 	   		return false;
 	    

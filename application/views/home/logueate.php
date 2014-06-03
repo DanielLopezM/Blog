@@ -1,9 +1,9 @@
         
           <form class="navbar-form navbar-right" role="form" action="home/comprobar_login" method="post">
          
-         <label style="color:orange"> <?php if ($this->session->flashdata('errors')){ //change!
+         <label style="color:#63CF5F"> <?php if ($this->session->flashdata('errors_login')){ //change!
                 
-                echo $this->session->flashdata('errors');
+                echo $this->session->flashdata('errors_login');
                
           }?></label>
 

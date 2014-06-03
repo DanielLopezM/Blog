@@ -2,13 +2,20 @@
              
 
 
-          <?php echo validation_errors(); ?>
+          <label style="color:#63CF5F"> <?php if ($this->session->flashdata('errors_reg')){ //change!
+                
+                echo $this->session->flashdata('errors_reg');
+                echo "<br>";
+               
+          }?></label>
+
+
               <p>¿No estás registrado o quieres crear otra cuenta?
               <br>Puedes registrarte ahora</p>
             <button type="button" id="bregistro" class="btn btn-lg btn-success" >Registro Nuevo  <span class="glyphicon glyphicon-star-empty"></span></button>
                 <p></p>
                 <div id="registrooculto">
-                <form class="form-horizontal" role="form" action="usuario_registro" method="post">
+                <form class="form-horizontal" role="form" action="home/registrar" method="post">
                 <div class="form-group">
                   
                   <div class="col-sm-12">
