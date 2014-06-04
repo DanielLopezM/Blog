@@ -39,6 +39,8 @@ if ($numcomentarios == 1) $cantidadcom = "comentario";
     <form action="home/nuevo_comentario" method="post">
       <input type="text" hidden id="entradaID" name="entradaID" value="<?php echo $entrada; ?>">
       <input type="text" hidden id="usuario_ID" name="usuario_ID" value="<?php echo $id; ?>">
+      <input type="text" hidden id="marca" name="marca" value="<?php echo $marca; ?>">
+      <input type="text" hidden id="modelo" name="modelo" value="<?php echo $modelo; ?>">
 
 
     <div class="input-group">

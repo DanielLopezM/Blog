@@ -26,6 +26,33 @@ class Home extends CI_Controller {
 		$data['id'] = $session_data['idnumber'];
 		$data['accounttype'] = $session_data['accounttype'];
 
+
+		//al loguearse, se recogen datos del dispositivo gracias a WURLF Cloud
+
+		// Include the autoloader - edit this path!
+require_once 'WURFL/src/autoload.php';
+ 
+// Create a configuration object 
+$config = new ScientiaMobile\WurflCloud\Config(); 
+ 
+// Set your WURFL Cloud API Key 
+$config->api_key = '954898:bBcFxmhVfn9DWP28LweyCT63YNkJ1jaX';  
+ 
+// Create the WURFL Cloud Client 
+$client = new ScientiaMobile\WurflCloud\Client($config); 
+ 
+// Detect your device 
+$client->detectDevice(); 
+ 
+// Use the capabilities 
+if ($client->getDeviceCapability('ux_full_desktop')) { 
+    	$data['marca'] = "dispositivo"; 
+        $data['modelo'] = "de escritorio"; 
+} else { 
+    $data['marca'] = $client->getDeviceCapability('brand_name');
+    $data['modelo'] = $client->getDeviceCapability('model_name');
+}
+
 		//usuario normal
 		if ($data['accounttype'] == 2)
 		{

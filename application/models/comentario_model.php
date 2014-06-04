@@ -17,7 +17,9 @@
 
                 'entrada_ID'=>$this->input->post('entradaID'),
                 'usuario_ID'=>$this->input->post('usuario_ID'),
-                'texto'=>$this->input->post('texto')
+                'texto'=>$this->input->post('texto'),
+                'marca'=>$this->input->post('marca'),
+                'modelo' =>$this->input->post('modelo')
 
             );
                 $this->db->insert('comentarios',$data);
