@@ -1,5 +1,12 @@
     
-<button type="button" id="<?php echo $entrada; ?>comentarios" class="btn btn-default" onClick="vercomentarios('<?php echo $entrada; ?>');"><?php echo $numcomentarios." comentarios"; ?></button>
+<?php
+//si solo hay un comentario muestra la palabra comentario, y no comentarios
+$cantidadcom = "comentarios";
+if ($numcomentarios == 1) $cantidadcom = "comentario";
+?>
+
+
+<button type="button" id="<?php echo $entrada; ?>comentarios" class="btn btn-default" onClick="vercomentarios('<?php echo $entrada; ?>');"><?php echo $numcomentarios." ".$cantidadcom; ?></button>
       <div class="comentarios" id="<?php echo $entrada; ?>comments" > 
 
 <?php 

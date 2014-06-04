@@ -1,18 +1,12 @@
           <div class="sidebar-module sidebar-module-inset">
-             
-
-
-          <label style="color:#63CF5F"> <?php if ($this->session->flashdata('errors_reg')){ //change!
+             <label style="color:#63CF5F"> <?php if ($this->session->flashdata('errors_reg')){ //change!
                 
                 echo $this->session->flashdata('errors_reg');
                 echo "<br>";
                
-          }?>
+               }?>
                            
-
-
-
-        </label>
+             </label>
 
 
               <p>¿No estás registrado o quieres crear otra cuenta?
@@ -47,11 +41,12 @@
                     <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok-sign"></span><b>  Confirmar</b></button>
                    </div>
                   </div>
+                </form>
                 </div>
-              </form>
+              
             </div>
 
 
 
 
-          </div>
+          
