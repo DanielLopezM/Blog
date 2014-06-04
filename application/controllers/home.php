@@ -185,6 +185,14 @@ function check_Username($username)
 	else
 	{
 		$this->comentario_model->insert_comentario();
+
+
+$this->db->where('ID', $this->input->post('entradaID'));
+$this->db->set('num_comentarios', 'num_comentarios+1', FALSE);
+$this->db->update('entradas');
+		/*$this->db->set('num_comentarios', 'num_comentarios+1', FALSE);
+		$this->db->where('ID', $this->input->post->('entradaID'));
+		$this->db->update('entradas');*/
 		redirect('home', 'refresh');
 	}
 }

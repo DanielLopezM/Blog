@@ -21,6 +21,9 @@
 
             );
                 $this->db->insert('comentarios',$data);
+
+
+
             return true;
             }
      
