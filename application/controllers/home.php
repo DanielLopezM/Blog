@@ -67,7 +67,7 @@ if ($client->getDeviceCapability('ux_full_desktop')) {
 	 //administrador
 	 else {
 
-//
+echo "master";
 	 }
 	   }
 	   else
