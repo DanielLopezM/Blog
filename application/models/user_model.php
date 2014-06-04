@@ -10,7 +10,7 @@
      
 	 public function login($username, $password)
 	 {
-	   $this -> db -> select('login, password, name');
+	   $this -> db -> select('id, tipoid, login, password, name');
 	   $this -> db -> from('usuarios');
 	   $this -> db -> where('login', $username);
 	   $this -> db -> where('password', $password);

@@ -1,5 +1,19 @@
 $(document).ready(function(){
   $("#bregistro").click(function(){
-    $("#registrooculto").slideDown("slow");
+    $("#registrooculto").slideToggle("slow");
   });
+
 });
+
+
+ function vercomentarios(id)
+{
+	
+	$(document).ready(function(){
+
+	
+		$("#"+id+"comments").slideToggle("slow");
+	
+	});
+	
+}

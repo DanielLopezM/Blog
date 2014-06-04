@@ -27,14 +27,6 @@ class Usuario_registro extends CI_Controller {
 		$this->user_model->register_user();
 
 
-	     $sess_array = array();
-	     
-	       $sess_array = array(
-	         'id' => $this->input->post('inputUsername'),
-	         'name' => $this->input->post('inputName')
-	       );
-
-	    $this->session->set_userdata('logged_in', $sess_array);
 		redirect('home', 'refresh');
 	}
 }

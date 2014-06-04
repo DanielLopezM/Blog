@@ -170,3 +170,12 @@ h6, .h6 {
 
   display:none;
 }
+
+.comentarios {
+  display:none;
+}
+.notas_comment {
+  text-align:right;
+  font-size:small;
+}
+

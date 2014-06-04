@@ -10,6 +10,7 @@ class Home extends CI_Controller {
 	   	$this->load->library('form_validation');
 
 	   	$this->load->model('entrada_model');
+	   	$this->load->model('comentario_model');
 	 }
 
 	public function index()
@@ -19,15 +20,28 @@ class Home extends CI_Controller {
 
 	if($this->session->userdata('logged_in'))
 	   {
-	     $session_data = $this->session->userdata('logged_in');
-	     $data['username'] = $session_data['id'];
-	     $data['realname'] = $session_data['name'];
+	    $session_data = $this->session->userdata('logged_in');
+	    $data['username'] = $session_data['id'];
+	    $data['realname'] = $session_data['name'];
+		$data['id'] = $session_data['idnumber'];
+		$data['accounttype'] = $session_data['accounttype'];
+
+		//usuario normal
+		if ($data['accounttype'] == 2)
+		{
 
 	    $data['principal'] = 'home/entradas';
 		$data['login'] = "home/bienvenido.php";
 		$data['registro'] = 'home/yaregistrado.php';
 		$data['comentarios'] = 'home/comentarios.php';
 	     $this->load->view('template', $data);
+	 }
+
+	 //administrador
+	 else {
+
+
+	 }
 	   }
 	   else
 	   {
@@ -53,7 +67,7 @@ class Home extends CI_Controller {
 	   {
 	   	
 	     //Field validation failed.  User redirected to login page
-   $redirect=$this->input->post('redirect'); 
+   //$redirect=$this->input->post('redirect'); 
    $this->session->set_flashdata('errors_login', validation_errors());
    redirect($this->input->post('redirect')); 
 	      
@@ -83,7 +97,9 @@ function check_database($password)
 	     {
 	       $sess_array = array(
 	         'id' => $row->login,
-	         'name' => $row->name
+	         'name' => $row->name,
+	         'idnumber' =>$row->id,
+	         'accounttype' =>$row->tipoid
 	       );
 	       $this->session->set_userdata('logged_in', $sess_array);
 	     }
@@ -118,14 +134,15 @@ function check_database($password)
 		$this->user_model->register_user();
 
 
-	     $sess_array = array();
+	    /* $sess_array = array();
 	     
 	       $sess_array = array(
 	         'id' => $this->input->post('inputUsername'),
 	         'name' => $this->input->post('inputName')
-	       );
+	       );*/
 
-	    $this->session->set_userdata('logged_in', $sess_array);
+	    //$this->session->set_userdata('logged_in', $sess_array);
+$this->session->set_flashdata('registrado', 'registrado2');
 		redirect('home', 'refresh');
 	}
 }
@@ -153,6 +170,24 @@ function check_Username($username)
 	   }
 
 	}
+
+	function nuevo_comentario()
+	{
+		$this->form_validation->set_rules('texto', 'Texto', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('entradaID', 'EntradaID', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('usuario_ID', 'UsuarioID', 'trim|required|xss_clean');
+
+		if($this->form_validation->run() == FALSE)
+	{
+
+   $redirect=$this->input->post('redirect'); 
+	}
+	else
+	{
+		$this->comentario_model->insert_comentario();
+		redirect('home', 'refresh');
+	}
+}
 
 
 	function logout()

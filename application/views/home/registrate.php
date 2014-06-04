@@ -7,7 +7,12 @@
                 echo $this->session->flashdata('errors_reg');
                 echo "<br>";
                
-          }?></label>
+          }?>
+                           
+
+
+
+        </label>
 
 
               <p>¿No estás registrado o quieres crear otra cuenta?

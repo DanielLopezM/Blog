@@ -5,7 +5,10 @@
                 
                 echo $this->session->flashdata('errors_login');
                
-          }?></label>
+          }?>
+ 
+
+        </label>
 
             <div class="form-group">
               <input type="text" size="20" id="username" name="username" placeholder="Usuario" class="form-control">

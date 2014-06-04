@@ -1,1 +1,2 @@
-<p>No puedes verlos ni comentar porque no estás logueado</p>
+<p>No puedes ver comentarios ni comentar porque no estás logueado</p>
+<hr>
