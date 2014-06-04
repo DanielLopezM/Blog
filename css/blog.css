@@ -5,6 +5,8 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  background:url(../img/retina_wood.png);
+
 }
 
 h1, .h1,
@@ -139,15 +141,18 @@ h6, .h6 {
 
 .blog-post {
   margin-bottom: 60px;
-  color: #A5BFBE;
+  color: black;
 }
 .blog-post-title {
   margin-bottom: 5px;
   font-size: 40px;
+  color:black;
 }
 .blog-post-meta {
   margin-bottom: 20px;
-  color: #999;
+  color: #04370E;
+  font-size:small;
+  text-align:right;
 }
 
 
@@ -175,7 +180,21 @@ h6, .h6 {
   display:none;
 }
 .notas_comment {
+  color:black;
   text-align:right;
   font-size:small;
+}
+
+.herramientas {
+
+  background-color:#0C1C10;
+}
+
+.entradas {
+  padding:1%;
+  background-color:#E6EDED;
+  border:2px solid;
+  border-radius:10px;
+  box-shadow: 10px 10px 5px #888888;
 }
 

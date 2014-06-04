@@ -5,11 +5,11 @@
             {
                 
 
-echo "<div class='blog-post'><br>
+echo "<div class='entradas'><div class='blog-post'><br>
             <h2 class='blog-post-title'>".$entrada['titulo'][$i]."</h2>
             <br>
             <p>".$entrada['contenido'][$i].
-            "</p>
+            "</p><br>
             <p class='blog-post-meta'>Escrito el ".$entrada['fecha'][$i]." por ".$entrada['nombre'][$i]." desde un ".$entrada['marca'][$i]." ".$entrada['modelo'][$i]."</p>
           </div>"
           ;
@@ -20,7 +20,8 @@ $data['comentarios'] = $this->comentario_model->getComentario($entrada['id'][$i]
 $data['numcomentarios'] = $entrada['comentarios'][$i];
 $this->load->view($comentarios, $data) ;
                   
-          
+          echo"</div><br>";
             }
 
     ?>
+
