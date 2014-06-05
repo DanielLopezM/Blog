@@ -198,3 +198,12 @@ h6, .h6 {
   box-shadow: 10px 10px 5px #888888;
 }
 
+pre {
+background-color:#E6EDED;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+   font-size: 18px;
+  line-height: 1.5;
+  border:0;
+  color:black;
+}

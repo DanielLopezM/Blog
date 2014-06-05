@@ -65,5 +65,24 @@
                            
                     }              
             }
+
+
+            public function insert_entrada()
+            {
+                $data=array(
+
+                'usuario_ID'=>$this->input->post('usuario_ID'),
+                'titulo'=>$this->input->post('newTitulo'),
+                'contenido'=>"<pre>".$this->input->post('newContenido')."</pre>",
+                'marca'=>$this->input->post('marca'),
+                'modelo' =>$this->input->post('modelo')
+
+            );
+                $this->db->insert('entradas',$data);
+
+
+
+            return true;
+            }
      
     }

@@ -11,10 +11,17 @@ class Home extends CI_Controller {
 
 	   	$this->load->model('entrada_model');
 	   	$this->load->model('comentario_model');
+	   	$this->load->model('blog_model');
 	 }
 
 	public function index()
 	{
+
+		//primero coge el titulo y la descripcion
+$apariencia = $this->blog_model->getTitulo();
+$data['tituloblog'] = $apariencia['tituloblog'];
+$data['subtituloblog'] = $apariencia['subtituloblog'];
+
 		$postId = NULL;
 		 $data['entrada'] = $this->entrada_model->getEntrada($postId);
 
@@ -220,6 +227,8 @@ $this->db->update('entradas');
 		/*$this->db->set('num_comentarios', 'num_comentarios+1', FALSE);
 		$this->db->where('ID', $this->input->post->('entradaID'));
 		$this->db->update('entradas');*/
+
+		$this->session->set_flashdata('comentario_env', 'comentario_env2');
 		redirect('home', 'refresh');
 	}
 }

@@ -52,13 +52,43 @@
       <div class="blog-header">
 
 
-        <h1 class="blog-title">Blog de Dani</h1>
-        <p class="lead blog-description">Blog de pruebas.</p>
+        <h1 class="blog-title"><?php echo $tituloblog; ?></h1>
+        <p class="lead blog-description"><?php echo $subtituloblog; ?></p>
         <?php if ($this->session->flashdata('registrado')){ 
                 
                 echo" <div class='alert alert-success alert-dismissable'>
   <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
   Registrado correctamenente. Ya puedes loguearte.
+</div>";
+
+               
+          }?>
+
+          <?php if ($this->session->flashdata('comentario_env')){ 
+                
+                echo" <div class='alert alert-success alert-dismissable'>
+  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+  Comentario enviado con éxito.
+</div>";
+
+               
+          }?>
+
+          <?php if ($this->session->flashdata('entrada_env')){ 
+                
+                echo" <div class='alert alert-success alert-dismissable'>
+  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+  Entrada enviada con éxito.
+</div>";
+
+               
+          }?>
+
+          <?php if ($this->session->flashdata('cambio_titulo')){ 
+                
+                echo" <div class='alert alert-success alert-dismissable'>
+  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+  Nombre del blog cambiado.
 </div>";
 
                

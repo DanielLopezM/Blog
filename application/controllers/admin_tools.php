@@ -11,10 +11,16 @@ class Admin_tools extends CI_Controller {
 
 	   	$this->load->model('entrada_model');
 	   	$this->load->model('comentario_model');
+	   	$this->load->model('blog_model');
 	 }
 
 	public function index()
 	{
+$apariencia = $this->blog_model->getTitulo();
+$data['tituloblog'] = $apariencia['tituloblog'];
+$data['subtituloblog'] = $apariencia['subtituloblog'];
+
+		
 		$postId = NULL;
 		 $data['entrada'] = $this->entrada_model->getEntrada($postId);
 
@@ -78,6 +84,38 @@ if ($client->getDeviceCapability('ux_full_desktop')) {
 	   }
 	
 	}
+
+
+	function nueva_entrada()
+	{
+		$this->form_validation->set_rules('newTitulo', 'Titulo', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('newContenido', 'Contenido', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('usuario_ID', 'UsuarioID', 'trim|required|xss_clean');
+
+		if($this->form_validation->run() == FALSE)
+	{
+
+
+redirect('admin_tools', 'refresh');	
+	}
+	else
+	{
+		$this->entrada_model->insert_entrada();
+
+$this->session->set_flashdata('entrada_env', 'entrada_env2');
+		redirect('admin_tools', 'refresh');
+	}
+}
+
+	function cambiar_titulo()
+	{
+		
+		$this->blog_model->cambiar_titulo();
+
+		$this->session->set_flashdata('cambio_titulo', 'cambio_titulo2');
+		redirect('admin_tools', 'refresh');
+	}
+
 	 
 
 }
