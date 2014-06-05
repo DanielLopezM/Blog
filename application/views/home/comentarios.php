@@ -7,7 +7,7 @@ if ($numcomentarios == 1) $cantidadcom = "comentario";
 
 
 <div style="margin-left:70%;">
-  <button type="button" id="<?php echo $entrada; ?>comentarios" class="btn btn-default" onClick="vercomentarios('<?php echo $entrada; ?>');"><span class="glyphicon glyphicon-comment"></span>&nbsp;<?php echo $numcomentarios." ".$cantidadcom; ?></button><br>
+  <button type="button" id="<?php echo $entrada; ?>comentarios" class="btn btn-default" onClick="vercomentarios('<?php echo $entrada; ?>');"><span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;&nbsp;<?php echo $numcomentarios." ".$cantidadcom; ?></button><br>
 </div>
 <div class="comentarios" id="<?php echo $entrada; ?>comments" > 
 <hr>
@@ -18,11 +18,11 @@ if ($numcomentarios == 1) $cantidadcom = "comentario";
 
   echo "     <div class='row'>
           <div class='col-lg-3'>
-            <p>".$comentarios['nombre'][$i]." dijo:<br></p>
+            <p><b>".$comentarios['nombre'][$i].":</b><br></p>
           </div>
           <div class='col-lg-9'>
             <div class='bs-component'>
-              <div class='well well-sm' style='background-color:#FFF5F0;color:#black'>"
+              <div class='well well-sm' style='background-color:#FFF5F0;color:#black;font-size:medium;'>"
                 .$comentarios['texto'][$i].
               "<p class='notas_comment'>".$comentarios['fecha'][$i]." desde <b>".$comentarios['marca'][$i]." ".$comentarios['modelo'][$i]."</b></p></div>
             </div>

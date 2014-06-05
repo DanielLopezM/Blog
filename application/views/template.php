@@ -31,7 +31,7 @@
 
   <body>
 
-     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     <div class="navbar navbar-inverse navbar-fixed-top"  role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -51,12 +51,12 @@
 
     <div class="container">
 
-
+<br>
       <div class="blog-header">
 
 
         <h1 class="blog-title"><?php echo $tituloblog; ?></h1>
-        <p class="lead blog-description"><?php echo $subtituloblog; ?></p>
+        <p class="lead blog-description" style="margin-left:40px;"><?php echo $subtituloblog; ?></p>
         <?php if ($this->session->flashdata('registrado')){ 
                 
                 echo" <div class='alert alert-success alert-dismissable'>
@@ -123,12 +123,20 @@
 
           <?= $this->load->view($registro) ?>
     
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
+          <div class="sidebar-module sidebar-module-inset">
+            <h4 style="color:black;">Herramientas/enlaces utilizados</h4>
             <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
+              <li><a style="color:black;" href="http://ellislab.com/codeigniter">CodeIgniter</a></li>
+              <li><a style="color:black;" href="http://github.com">GitHub</a></li>
+              <li><a style="color:black;" href="http://getbootstrap.com/">Twitter Bootstrap</a></li>
+              <li><a style="color:black;" href="http://sublimetext.com">Sublime-Text</a></li>
+              <li><a style="color:black;" href="http://scientiamobile.com/cloud">WURFL Cloud</a></li>
+              <li><a style="color:black;" href="http://jquery.com">jQuery</a></li>
+              <li><a style="color:black;" href="https://datatables.net">Datatables</a></li>
+              <li><hr></li>
+              <li><a style="color:black;" href="http://stackoverflow.com/">Stackoverflow</a></li>
+              <li><a style="color:black;" href="http://bootswatch.com">Bootswatch</a></li>
+              <li><a style="color:black;" href="http://subtlepatterns.com">Subtlepatterns</a></li>        
             </ol>
           </div>
         </div><!-- /.blog-sidebar -->
@@ -140,11 +148,6 @@
 
     </div><!-- /.container -->
 
-   <div class="blog-footer">
-      <div class="container">
-        <p class="text-muted">Desarrollado por <b>Daniel López</b> para la prueba de <b>Kitmaker</b>.</p>
-      </div>
-    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

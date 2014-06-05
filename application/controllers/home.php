@@ -74,7 +74,13 @@ if ($client->getDeviceCapability('ux_full_desktop')) {
 	 //administrador
 	 else {
 
-	 	redirect('admin_tools', 'refresh');
+
+	    $data['principal'] = 'home/entradas';
+		$data['login'] = "home/bienvenido.php";
+		$data['registro'] = 'home/yaregistrado_admin_usuario.php';
+		$data['comentarios'] = 'home/comentarios.php';
+	     $this->load->view('template', $data);
+	 	//redirect('admin_tools', 'refresh');
 	 }
 	   }
 	   else

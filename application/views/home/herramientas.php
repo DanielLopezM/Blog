@@ -1,5 +1,5 @@
 <div class='entradas'>
-<button type="button" id="bnuevaentrada" class="btn btn-default"><h4 style="color:white">Nueva entrada</h4></button>
+<button type="button" id="bnuevaentrada" class="btn btn-warning">Nueva entrada</button>
 
      <div id="nuevaentrada">
 
@@ -26,7 +26,7 @@
 <br>
 
 <div class='entradas'>
-<button type="button" id="bcambiartitulo" class="btn btn-default"><h4 style="color:white">Cambiar título</h4></button>
+<button type="button" id="bcambiartitulo" class="btn btn-warning">Cambiar título</button>
 
 <div id="cambiartitulo">
 	<div class='blog-post'>
@@ -50,7 +50,7 @@
 </div>
 <br>
 <div class='entradas'>
-      <button type="button" id="bcontrolcomentarios" class="btn btn-default"><h4 style="color:white">Control de comentarios</h4></button>
+      <button type="button" id="bcontrolcomentarios" class="btn btn-warning">Control de comentarios</button>
 <div id="controlcomentarios">
 	<div class='blog-post'>
 <br>
