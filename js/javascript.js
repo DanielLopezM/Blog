@@ -1,3 +1,8 @@
+  $(document).ready(function() {
+      $("#tablacomentarios").dataTable();
+  });
+
+
 $(document).ready(function(){
   $("#bregistro").click(function(){
     $("#registrooculto").slideToggle("slow");

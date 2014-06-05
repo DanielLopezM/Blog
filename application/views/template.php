@@ -16,6 +16,9 @@
     <!-- Custom styles for this template -->
     <link href="<?= base_url('css/blog.css') ?>" rel="stylesheet">
 
+
+    <link href="<?= base_url('css/jquery.dataTables.min.css') ?>" rel="stylesheet">
+
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -94,6 +97,16 @@
                
           }?>
 
+          <?php if ($this->session->flashdata('censurado')){ 
+                
+                echo" <div class='alert alert-success alert-dismissable'>
+  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+  Comentario censurado.
+</div>";
+
+               
+          }?>
+
  
       </div>
 
@@ -129,7 +142,7 @@
 
    <div class="blog-footer">
       <div class="container">
-        <p class="text-muted">Desarrollado por <b>Daniel López</b> para <b>Kitmaker</b>.</p>
+        <p class="text-muted">Desarrollado por <b>Daniel López</b> para la prueba de <b>Kitmaker</b>.</p>
       </div>
     </div>
     <!-- Bootstrap core JavaScript
@@ -138,5 +151,6 @@
     <script src="<?= base_url('js/jquery.js') ?>"></script>
         <script src="<?= base_url('js/javascript.js') ?>"></script>
     <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
+    <script src="<?= base_url('js/jquery.dataTables.min.js') ?>"></script>
   </body>
 </html>

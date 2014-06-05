@@ -15,7 +15,7 @@
             {
                     $entrada=array();
                     if ($entradaID !== null){         
-                            $query = $this->db->get_where('entradas', array('id' => $entradaID));
+                            $query = $this->db->order_by("fecha", "desc")->get_where('entradas', array('id' => $entradaID));
                             if ($query->num_rows() == 1) { 
                                     foreach($query->result() as $row){
                                     $entrada['id'] = $row->ID;
@@ -40,7 +40,7 @@
                                     return $entrada;
                             }      
                     } else {
-                            $query = $this->db->get('entradas');
+                            $query = $this->db->order_by("fecha", "desc")->get('entradas');
                             if ($query->num_rows() !== 0 ){
                                     foreach($query->result() as $row){
                                     $entrada['id'][] = $row->ID;

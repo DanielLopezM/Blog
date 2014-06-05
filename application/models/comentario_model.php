@@ -62,5 +62,50 @@
                            
                                   
             }
+
+            public function getComentariosParaAdmin()
+            {
+                    $comentarios=array();
+                             
+                    $query = $this->db->order_by("id", "desc")->get('comentarios');
+                    if ($query->num_rows() !== 0) { 
+                                    foreach($query->result() as $row){
+                                    $comentarios['id'][] = $row->ID;
+                                    $comentarios['entrada_id'][] = $row->entrada_ID;
+                                    $comentarios['usuario_ID'][] = $row->usuario_ID;
+                                    $comentarios['texto'][] = $row->texto;
+                                    $comentarios['fecha'][] = $row->fecha;
+//saca el nombre del que ha escrito el comentario
+                                    $query2 = $this->user_model->getUser($row->usuario_ID);
+                                    if ($query2->num_rows() == 1)
+                                    {
+                                        foreach($query2->result() as $row2){
+                                            $comentarios['nombre'][] = $row2->name;  
+                                        }
+                                    }
+                                    }
+                                    return $comentarios;
+                            }      
+                    
+                           
+
+            }
+
+            public function censurar()
+            {
+                $data=array(
+
+                'texto'=>"<i>Comentario censurado por el administrador</i>",
+                
+
+            );
+
+                $id = $this->input->post('comID');
+                $this->db->where('ID', $id)->update('comentarios',$data);
+
+
+
+            return true;
+            }
      
     }

@@ -53,8 +53,41 @@
       <button type="button" id="bcontrolcomentarios" class="btn btn-default"><h4 style="color:white">Control de comentarios</h4></button>
 <div id="controlcomentarios">
 	<div class='blog-post'>
+<br>
+          <table class="table table-hover" id="tablacomentarios">
+          <thead>
+              <th>ID</th>
+              <th>Autor</th>
+              <th>Comentario</th>
+              <th></th>
+          </thead>
+          <tbody>
+              <?php 
+            $cantidad = count($comentariosparaadmin['id']);
+            for ($i=0;$i<$cantidad;$i++)
+            {
+                ?>
+              <tr>
+                  <td><?php echo $comentariosparaadmin['id'][$i];?></td>
+                  <td><?php echo $comentariosparaadmin['nombre'][$i];?></td>
+                  <td><?php echo $comentariosparaadmin['texto'][$i];?></td>
+                  <td>
+                    <form  method="post" action="admin_tools/censurar_comentario">
 
-          <p>Censura de comentarios</p>
+                        <input type="text" hidden id="comID" name="comID" value="<?php echo $comentariosparaadmin['id'][$i]; ?>">
+
+                      <button type="submit" class="btn btn-xs"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                    </form>
+                  </td>
+              </tr>
+            <?php } ?>
+          </tbody>
+          </table>
+
 	</div>
 </div>
 </div>
+
+
+
+

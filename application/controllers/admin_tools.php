@@ -63,11 +63,16 @@ if ($client->getDeviceCapability('ux_full_desktop')) {
 		if ($data['accounttype'] == 1)
 		{
 
+
+		$data['comentariosparaadmin'] = $this->comentario_model->getComentariosParaAdmin();
+
 	    $data['principal'] = "home/herramientas";
 		$data['login'] = "home/bienvenido.php";
 		$data['registro'] = 'home/yaregistrado_admin.php';
 		$data['comentarios'] = 'home/comentarios.php';
-	     $this->load->view('template', $data);
+
+
+	    $this->load->view('template', $data);
 
 
 	 }
@@ -113,6 +118,14 @@ $this->session->set_flashdata('entrada_env', 'entrada_env2');
 		$this->blog_model->cambiar_titulo();
 
 		$this->session->set_flashdata('cambio_titulo', 'cambio_titulo2');
+		redirect('admin_tools', 'refresh');
+	}
+
+	function censurar_comentario()
+	{
+		
+		$this->comentario_model->censurar();
+		$this->session->set_flashdata('censurado', 'censurado2');
 		redirect('admin_tools', 'refresh');
 	}
 
