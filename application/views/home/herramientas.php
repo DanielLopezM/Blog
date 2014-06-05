@@ -1,7 +1,10 @@
 <div class='entradas'>
+<button type="button" id="bnuevaentrada" class="btn btn-default"><h4 style="color:white">Nueva entrada</h4></button>
+
+     <div id="nuevaentrada">
+
 	<div class='blog-post'>
    
-
    <form role="form" action="admin_tools/nueva_entrada" method="post">
   <div class="form-group">
     <label for="newTitulo">Título</label>
@@ -17,12 +20,15 @@
 
   <button type="submit" class="btn btn-default">Enviar</button>
 </form>
-
+</div>
 	</div>
 </div>
 <br>
 
 <div class='entradas'>
+<button type="button" id="bcambiartitulo" class="btn btn-default"><h4 style="color:white">Cambiar título</h4></button>
+
+<div id="cambiartitulo">
 	<div class='blog-post'>
 
           <form role="form" action="admin_tools/cambiar_titulo" method="post">
@@ -41,9 +47,14 @@
 
 	</div>
 </div>
+</div>
 <br>
 <div class='entradas'>
+      <button type="button" id="bcontrolcomentarios" class="btn btn-default"><h4 style="color:white">Control de comentarios</h4></button>
+<div id="controlcomentarios">
 	<div class='blog-post'>
+
           <p>Censura de comentarios</p>
 	</div>
+</div>
 </div>
